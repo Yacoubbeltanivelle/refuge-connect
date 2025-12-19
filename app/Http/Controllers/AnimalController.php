@@ -7,6 +7,48 @@ use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
+    public function create()
+    {
+        $animal = new Animal();
+
+        if ($animal) {
+            $animal->name = 'Coquillette';
+            $animal->species = 'chien';
+            $animal->age = 3;
+            $animal->description = 'Un chien gentil.';
+            $animal->photo = 'coquillette.png';
+            $animal->save();
+            return "Animal créer !";
+        } else {
+            return view('errors.not-found');
+        }
+    }
+
+
+    public function update($id)
+    {
+        $animal = Animal::find($id);
+        if ($animal) {
+            $animal->name = $animal->name . ' modifié';
+            $animal->save();
+            return "Animal modifié !";
+        } else {
+            return view('errors.not-found');
+        }
+    }
+
+
+    public function delete($id)
+    {
+        $animal = Animal::find($id);
+        if ($animal) {
+            $animal->delete();
+            return "Animal supprimé ! !";
+        } else {
+            return view('errors.not-found');
+        }
+    }
+
     public function show($id)
     {
         $animal = Animal::find($id);

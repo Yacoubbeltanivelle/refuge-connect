@@ -12,10 +12,11 @@
 <body style="font-family: sans-serif; background-color: #f5f8fa; margin: 0;">
 
     <header style="background-color: white; padding: 20px; text-align: center; border-bottom: 3px solid #52c9ff;">
+        <img src="/logo.png" alt="" style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 15px;">
         <h1 style="margin: 0; color: #52c9ff;">Refuge Connect</h1>
         <nav style="margin-top: 10px;">
             <a href="{{ route('home') }}">Accueil</a>
-            <span>Ajouter un animal</span>
+            <a href="{{ route('animal.create') }}" style="color: #52c9ff;">Ajouter un animal</a>
         </nav>
     </header>
 

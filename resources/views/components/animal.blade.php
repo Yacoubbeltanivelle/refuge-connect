@@ -15,8 +15,8 @@
     </p>
 
     <div>
-        <a href="#" style="color: #52c9ff;">Modifier</a>
-        <a href="#" style="color: #e3342f;">Supprimer</a>
+        <a href="{{ route('animal.update', $id) }}" style="color: #52c9ff;">Modifier</a>
+        <a href="{{ route('animal.delete', $id) }}" style="color: #e3342f;">Supprimer</a>
     </div>
 
 </div>

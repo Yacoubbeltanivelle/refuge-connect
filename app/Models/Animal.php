@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Animal extends Model
 {
     /** Colonnes modifiables via create() ou update() */
-    protected $fillable = ['nom'];
+    protected $fillable = ['name'];
 }
