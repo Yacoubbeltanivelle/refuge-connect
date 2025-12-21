@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Page non trouvée')
 @section('content')
-<h2 style="color: red;">Oups ! Page non trouvée.</h2>
-<p>Désolé, la page que vous cherchez n'existe pas.</p>
-<a href="{{ route('home') }}">Retour à l'accueil</a>
+
+<div class="error-page">
+    <h1 class="error-title">Page non trouvée.</h1>
+</div>
+
 @endsection

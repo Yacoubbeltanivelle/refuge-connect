@@ -2,10 +2,10 @@
 @section('title', 'Accueil')
 @section('content')
 
-<h1>Nos animaux</h1>
-<div>
+<h1 class="page-title">Nos animaux</h1>
+
+<div class="animals-grid">
     @foreach($animaux as $animal)
-    <a href="{{ route('animal.fiche', $animal->id) }}">
         <x-animal
             :id="$animal['id']"
             :photo="$animal['photo']"
@@ -13,8 +13,7 @@
             :age="$animal['age']"
             :species="$animal['species']"
             :description="$animal['description']" />
-    </a>
     @endforeach
-
 </div>
+
 @endsection

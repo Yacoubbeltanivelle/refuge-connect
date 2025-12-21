@@ -1,22 +1,27 @@
-<div style="border: 5px solid #055aecff; padding: 15px; margin-bottom: 10px;">
-
-
-    <img src="{{ asset($photo) }}" alt="{{ $name }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-
-    <h3>{{ $name }}</h3>
-
-    <div>
-        Espèce : {{ $species }} <br>
-        Âge : {{ $age }} ans
+<div class="animal-card">
+    <a href="{{ route('animal.fiche', $id) }}" class="animal-card-link">
+        <img src="{{ asset($photo) }}" alt="{{ $name }}" class="animal-photo">
+        
+        <div class="animal-info">
+            <h3 class="animal-name">{{ $name }}</h3>
+            
+            <p class="animal-details">
+                <span>Espèce :</span> {{ $species }}
+            </p>
+            <p class="animal-details">
+                <span>Âge :</span> {{ $age }} ans
+            </p>
+            
+            <p class="animal-description">
+                {{ Str::limit($description, 80) }}
+            </p>
+        </div>
+    </a>
+    
+    <div class="animal-info">
+        <div class="animal-actions">
+            <a href="{{ route('animal.update', $id) }}" class="btn-edit">Modifier</a>
+            <a href="{{ route('animal.delete', $id) }}" class="btn-delete">Supprimer</a>
+        </div>
     </div>
-
-    <p>
-        {{ Str::limit($description, 100) }}
-    </p>
-
-    <div>
-        <a href="{{ route('animal.update', $id) }}" style="color: #52c9ff;">Modifier</a>
-        <a href="{{ route('animal.delete', $id) }}" style="color: #e3342f;">Supprimer</a>
-    </div>
-
 </div>

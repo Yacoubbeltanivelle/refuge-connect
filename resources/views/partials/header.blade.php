@@ -1,6 +1,7 @@
 <header>
-    <img src="/logo.png" alt="Logo Refuge">
-    <h1>Refuge Connect</h1>
+    <div class="header-logo">
+        <img src="{{ asset('logo.png') }}" alt="Logo Refuge Connect">
+    </div>
     <nav>
         <a href="{{ route('home') }}">Accueil</a>
         <a href="{{ route('animal.create') }}" class="btn-primary">Ajouter un animal</a>
