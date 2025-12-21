@@ -18,7 +18,7 @@ class AnimalController extends Controller
             $animal->description = 'Un chien gentil.';
             $animal->photo = 'coquillette.png';
             $animal->save();
-            return "Animal créer !";
+            return redirect('/');
         } else {
             return view('errors.not-found');
         }
@@ -31,7 +31,7 @@ class AnimalController extends Controller
         if ($animal) {
             $animal->name = $animal->name . ' modifié';
             $animal->save();
-            return "Animal modifié !";
+            return redirect('/');
         } else {
             return view('errors.not-found');
         }
@@ -43,7 +43,7 @@ class AnimalController extends Controller
         $animal = Animal::find($id);
         if ($animal) {
             $animal->delete();
-            return "Animal supprimé ! !";
+            return redirect('/');
         } else {
             return view('errors.not-found');
         }
