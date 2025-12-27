@@ -9,15 +9,15 @@ class AnimalController extends Controller
 {
     public function create()
     {
-        $animal = new Animal();
+        $animal = Animal::create([
+            'name' => 'Coquillette',
+            'species' => 'chien',
+            'age' => 3,
+            'description' => 'Un chien gentil.',
+            'photo' => 'coquillette.png',
+        ]);
 
         if ($animal) {
-            $animal->name = 'Coquillette';
-            $animal->species = 'chien';
-            $animal->age = 3;
-            $animal->description = 'Un chien gentil.';
-            $animal->photo = 'coquillette.png';
-            $animal->save();
             return redirect('/');
         } else {
             return view('errors.not-found');

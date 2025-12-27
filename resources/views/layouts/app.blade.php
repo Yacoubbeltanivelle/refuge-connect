@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>RefugeConnect - @yield('title')</title>
     <link rel="icon" href="{{ asset('favicon.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -7,13 +7,13 @@
 
 <div class="fiche-detail">
     <div class="fiche-content">
-        <img src="{{ asset($animal->photo) }}" alt="{{ $animal->name }}" class="fiche-photo">
+        <img src="{{ asset('images/' . $animal->photo) }}" alt="{{ $animal->name }}" class="fiche-photo">
 
         <div class="fiche-info">
             <p class="fiche-field">
                 <span class="fiche-label">Espèce :</span> {{ $animal->species }}
             </p>
-            
+
             <p class="fiche-field">
                 <span class="fiche-label">Age :</span> {{ $animal->age }} ans
             </p>
